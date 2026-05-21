@@ -144,24 +144,24 @@ Whenever anyone runs `infragenie init` in that repository, the tool will automat
 
 ```mermaid
 graph TD
-    subgraph Analysis Phase
+    subgraph analysis ["Analysis Phase"]
         DIR[Target Project Code] -->|infragenie scan| SCAN[Static Analyzer Engine]
         SCAN -->|Manifests & Imports| DEPS[Mapped DB/Cache/Queue Deps]
         SCAN -->|Env Signatures & Routes| API[MAPPED Env Variables & Endpoints]
     end
-    subgraph Intelligence Phase
+    subgraph intelligence ["Intelligence Phase"]
         DEPS & API -->|Structured Payload| LLM[OpenAI / Compatible Endpoint]
         LLM -->|Infrastructure Markdown| CLI[CLI Output Engine]
     end
-    subgraph Outputs & Launch
+    subgraph outputs ["Outputs & Launch"]
         CLI -->|Write| COM[docker-compose.yml]
         CLI -->|Write| ENV[.env.example]
         CLI -->|Write & Chmod| SH[init-infra.sh]
         CLI -->|Write| N8N[infragenie-n8n-tests.json]
     end
-    style Analysis Phase fill:#fdfefe,stroke:#007ACC,stroke-width:1px
-    style Intelligence Phase fill:#f4f6f7,stroke:#2C3E50,stroke-width:1px
-    style Outputs & Launch fill:#f4fbf7,stroke:#27AE60,stroke-width:1px
+    style analysis fill:#fdfefe,stroke:#007ACC,stroke-width:1px
+    style intelligence fill:#f4f6f7,stroke:#2C3E50,stroke-width:1px
+    style outputs fill:#f4fbf7,stroke:#27AE60,stroke-width:1px
 ```
 
 ---
