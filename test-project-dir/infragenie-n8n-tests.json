@@ -1,0 +1,77 @@
+{
+  "name": "InfraGenie - test-project-dir API Test Suite",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger-id",
+      "name": "Trigger API Tests",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3000/api/v1/users",
+        "options": {}
+      },
+      "id": "http-request-id-0",
+      "name": "Test api v1 users",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3000/webhook/stripe-events",
+        "options": {}
+      },
+      "id": "http-request-id-1",
+      "name": "Test webhook stripe events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        500,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger API Tests": {
+      "main": [
+        [
+          {
+            "node": "Test api v1 users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test api v1 users": {
+      "main": [
+        [
+          {
+            "node": "Test webhook stripe events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test webhook stripe events": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

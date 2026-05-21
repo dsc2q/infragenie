@@ -1,0 +1,23 @@
+{
+  "name": "infragenie",
+  "version": "0.1.0",
+  "description": "AI-powered local infrastructure code generator",
+  "main": "dist/cli.js",
+  "bin": {
+    "infragenie": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

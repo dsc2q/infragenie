@@ -1,0 +1,5 @@
+{
+  "model": "gpt-4-turbo",
+  "baseUrl": "http://localhost:9876/v1",
+  "n8n": true
+}
