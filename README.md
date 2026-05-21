@@ -8,6 +8,10 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge&logo=github)](https://github.com/dsc2q/infragenie/pulls)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/dsc2q/infragenie/actions)
 
+<p align="center">
+  <img src="assets/infragenie_terminal_demo.png" alt="InfraGenie Terminal Execution Demo" width="800" />
+</p>
+
 ---
 
 ## ⚡ Developer Experience: Manual vs. Automated
